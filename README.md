@@ -1,6 +1,6 @@
 # Explorer
 
-A QTUM blockchain explorer web application service for [Qtumcore Node](https://github.com/qtumproject/qtumcore-node) using the [QTUM API](https://github.com/qtumproject/insight-api).
+A RECRYPT blockchain explorer web application service for [Recryptcore Node](https://github.com/recryptproject/recryptcore-node) using the [RECRYPT API](https://github.com/recryptproject/insight-api).
 
 
 ## Getting Started
@@ -13,44 +13,44 @@ A QTUM blockchain explorer web application service for [Qtumcore Node](https://g
     ```  
 2. Install mongo https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/  
 
-3. Install qtum-bitcore https://github.com/qtumproject/qtum-bitcore - with ZMQ ! 
+3. Install recrypt-bitcore https://github.com/recryptproject/recrypt-bitcore - with ZMQ ! 
 
     ```bash
     # with ZMQ
     sudo apt-get install libzmq3-dev 
     ```  
-4. Install qtumcore-node  
+4. Install recryptcore-node  
 
     ```bash
-    npm i https://github.com/qtumproject/qtumcore-node.git#master
+    npm i https://github.com/recryptproject/recryptcore-node.git#master
 
-    $(npm bin)/qtumcore-node create mynode
+    $(npm bin)/recryptcore-node create mynode
 
     cd mynode
 
-    $(npm bin)/qtumcore-node install https://github.com/qtumproject/insight-api.git#master
-    $(npm bin)/qtumcore-node install https://github.com/qtumproject/qtum-explorer.git#master
+    $(npm bin)/recryptcore-node install https://github.com/recryptproject/insight-api.git#master
+    $(npm bin)/recryptcore-node install https://github.com/recryptproject/recrypt-explorer.git#master
     ```  
-5. Edit qtumcore-node.json  
+5. Edit recryptcore-node.json  
 
     ```json
     {
       "network": "livenet",
       "port": 3001,
       "services": [
-        "qtumd",
-        "qtum-insight-api",
-        "qtum-explorer",
+        "recryptd",
+        "recrypt-insight-api",
+        "recrypt-explorer",
         "web"
       ],
       "servicesConfig": {
-        "qtum-explorer": {
-          "apiPrefix": "qtum-insight-api",
-          "routePrefix": "qtum-explorer",
-          "nodemapLink": "https://qtum.org/en/nodemap"
+        "recrypt-explorer": {
+          "apiPrefix": "recrypt-insight-api",
+          "routePrefix": "recrypt-explorer",
+          "nodemapLink": "https://recrypt.org/en/nodemap"
        },
-       "qtum-insight-api": {
-         "routePrefix": "qtum-insight-api",
+       "recrypt-insight-api": {
+         "routePrefix": "recrypt-insight-api",
          "rateLimiterOptions": {
            "whitelist": [
              "123.456.12.34",
@@ -64,7 +64,7 @@ A QTUM blockchain explorer web application service for [Qtumcore Node](https://g
           "db": {
             "host": "127.0.0.1",
             "port": "27017",
-            "database": "qtum-api-livenet",
+            "database": "recrypt-api-livenet",
             "user": "",
             "password": ""
          },
@@ -72,17 +72,17 @@ A QTUM blockchain explorer web application service for [Qtumcore Node](https://g
             "updateFromBlockHeight": 0
           }
         },
-        "qtumd": {
+        "recryptd": {
           "spawn": {
-            "datadir": "/home/user/.qtum",
-           "exec": "/home/user/qtum-bitcore/src/qtumd"
+            "datadir": "/home/user/.recrypt",
+           "exec": "/home/user/recrypt-bitcore/src/recryptd"
           }
         }
       }
     }
 
     ```  
-6. Edit qtum.conf  
+6. Edit recrypt.conf  
 
     ```
     server=1
@@ -105,10 +105,10 @@ A QTUM blockchain explorer web application service for [Qtumcore Node](https://g
 7. Run Node  
 
     ```
-    $(npm bin)/qtumcore-node start
+    $(npm bin)/recryptcore-node start
     ```  
 
-8. Open a web browser to `http://localhost:3001/qtum-explorer` or `http://localhost:3001/qtum-insight-api`  
+8. Open a web browser to `http://localhost:3001/recrypt-explorer` or `http://localhost:3001/recrypt-insight-api`  
 
 ## Development
 
@@ -159,11 +159,11 @@ compile***.
 
 ## Note
 
-For more details about the [QTUM API](https://github.com/qtumproject/insight-api) configuration and end-points, go to [QTUM API](https://github.com/qtumproject/insight-api).
+For more details about the [RECRYPT API](https://github.com/recryptproject/insight-api) configuration and end-points, go to [RECRYPT API](https://github.com/recryptproject/insight-api).
 
 ## Contribute
 
-Contributions and suggestions are welcomed at the [Explorer GitHub repository](https://github.com/qtumproject/qtum-explorer).
+Contributions and suggestions are welcomed at the [Explorer GitHub repository](https://github.com/recryptproject/recrypt-explorer).
 
 
 ## License

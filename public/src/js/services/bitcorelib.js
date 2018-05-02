@@ -1,8 +1,8 @@
 'use strict';
 
-angular.module('insight.qtumcorelib').factory('QtumCoreLib',
+angular.module('insight.recryptcorelib').factory('RecryptCoreLib',
     function() {
-        var QtumCoreLib = require('qtumcore-lib');
-        return QtumCoreLib;
+        var RecryptCoreLib = require('recryptcore-lib');
+        return RecryptCoreLib;
     });
 
